@@ -3,7 +3,7 @@ package org.colleg.practice2.task5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HospitalController {
+public class HospitalController extends Observable{
     private List<HospitalAlert> alertHistory = new ArrayList<>();
 
     public void informAlert(HospitalAlert alert) {
