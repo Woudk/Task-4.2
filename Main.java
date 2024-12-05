@@ -6,12 +6,11 @@ public class Main {
 
         HospitalController controller = new HospitalController();
 
-        EmailNotifier emailNotifier = new EmailNotifier("hospital_admin@gmail.com");
-        SMSNotifier smsNotifier = new SMSNotifier("+0958642715");
+        EmailNotifier emailNotifier = new EmailNotifier("hospital_admin@gmail.com", controller);
+        SMSNotifier smsNotifier = new SMSNotifier("+0958642715", controller);
 
-        Observable notifierSystem = new Observable() {};
-        notifierSystem.subscribe(emailNotifier);
-        notifierSystem.subscribe(smsNotifier);
+        controller.subscribe(emailNotifier);
+        controller.subscribe(smsNotifier);
 
         HospitalAlert alert = new HospitalAlert(
                 AlertSeverity.CRITICAL,
@@ -21,6 +20,5 @@ public class Main {
         );
 
         controller.informAlert(alert);
-        notifierSystem.notifyObservers(alert.getMessage());
     }
 }
