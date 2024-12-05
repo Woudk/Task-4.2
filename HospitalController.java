@@ -8,6 +8,7 @@ public class HospitalController {
 
     public void informAlert(HospitalAlert alert) {
         addAlert(alert);
+        notifyObservers(alert.getMessage());
         System.out.println("New alert: " + alert.getMessage());
     }
 
