@@ -6,8 +6,8 @@ public class Main {
 
         HospitalController controller = new HospitalController();
 
-        EmailNotifier emailNotifier = new EmailNotifier("hospital_admin@gmail.com", controller);
-        SMSNotifier smsNotifier = new SMSNotifier("+0958642715", controller);
+        EmailNotifier emailNotifier = new EmailNotifier("hospital_admin@gmail.com");
+        SMSNotifier smsNotifier = new SMSNotifier("+0958642715");
 
         controller.subscribe(emailNotifier);
         controller.subscribe(smsNotifier);
